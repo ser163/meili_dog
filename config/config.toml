@@ -1,0 +1,30 @@
+# MeiliSearch 服务器配置
+[server]
+address = "http://localhost:7700"
+api_key = "bkZzQO38G5PTNfpbrG0iF2eHxAopXlZVLabVRllFuFw"
+local_port = 8081
+
+[search]
+index_uid = "users"  # 指定要使用的索引UID
+
+# 搜索默认配置
+[search.default]
+limit = 20
+offset = 0
+
+# 搜索结果优化参数
+[search.optimization]
+attributes_to_crop = ["desc",]
+crop_length = 200
+attributes_to_highlight = ["desc", "name"]
+highlight_pre_tag = "<mark>"
+highlight_post_tag = "</mark>"
+attributes_to_retrieve = ["*"]
+attributes_to_search_on = ["name", "desc"]
+
+# 字段类型映射配置
+[fields.string]
+names = ["name", "desc", "created_at"]
+
+[fields.number]
+names = ["id"]
